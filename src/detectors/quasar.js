@@ -16,14 +16,14 @@ module.exports = function() {
 
   if (possibleArgsArrs.length === 0) {
     // offer to run this default when the user doesnt have any matching scripts setup!
-    possibleArgsArrs.push(['quasar', 'dev', '-p 8081'])
+    possibleArgsArrs.push(['quasar', 'dev'])
   }
 
   return {
     framework: 'quasar',
     command: getYarnOrNPMCommand(),
     port: 8888,
-    frameworkPort: 8081,
+    frameworkPort: 8080,
     env: { ...process.env },
     possibleArgsArrs,
     urlRegexp: new RegExp(`(http://)([^:]+:)${8080}(/)?`, 'g'),
